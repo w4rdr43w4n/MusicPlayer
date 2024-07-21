@@ -1,0 +1,247 @@
+@font-face {
+  font-family: Boril;
+  src: url('fonts/Borel/Borel-Regular.ttf');
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+:root{
+  width:100%;
+  height: 100%;
+}
+html{
+  width:100%;
+  height: 100%;
+}
+body{
+  width:100%;
+  height: 100%;
+}
+.container{
+  width:100%;
+  height:100vh;
+  background-color: #252525;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+}
+.player{
+  padding: 0px;
+  width:300px;
+  height:500px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 50px #000;
+  background-color:#353535;
+  z-index: 0;
+}
+ 
+.player .song_img{
+  animation:none;
+  border-radius: 100%;
+  width: 200px;
+  height:200px;
+  border:8px solid #747474;
+  outline: none;
+  box-shadow: 0px 0px 60px #787878;
+  transition: 1s;
+}
+.player h1{
+  margin:20px 0px 5px 0px;
+  font-size: 20px;
+  font-weight: 800;
+  color:#fff;
+}
+.player p{
+  font-size: 14px;
+  color:#ffffffe8;
+}
+.player .progress{
+  appearance: none;
+  width:100%;
+  height: 6px;
+  margin: 10px;
+  background: #4e4e4e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.player .progress::-webkit-slider-thumb{
+  appearance: none;
+  background: rgb(255, 72, 0);
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  border: 8px solid #767676;
+  box-shadow: 0 0px 10px #000;
+  outline: none;
+}
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap:30px;
+}
+.controls div{
+  background-color:transparent;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  width:50px;
+  height:50px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.container .playBtn{
+  background-color: rgb(44, 43, 43);
+  box-shadow: 0px 0px 15px #fff;
+  transform: scale(1.15);
+}
+.back i:active,.for i:active{
+color:gold;
+}
+.comp{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width:100%;
+  height: 100%;
+  padding: 10px;
+  font-family: Boril;
+}
+/* list container */
+.lshow{
+  background-color: transparent;
+  color:#fff;
+  border: none;
+  padding:10px;
+  font-size: 25px;
+  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+.lshow:hover{
+  opacity: 1;
+  text-shadow: 0px 0px 20px #fff;
+}
+nav{
+  background-color: transparent;
+  width:100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  z-index: 2;
+}
+.items{
+  background-color:rgb(60, 60, 60);
+  width:100%;
+  height: 100%;
+  display:none;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+.items h2{
+  font-family:cursive;
+  text-align: center;
+  font-size: 30px;
+  color:#dadada;
+  width:100%;
+  padding:5px;
+  border-bottom:2px solid #dadada;
+  opacity: 0.8;
+}
+.items input{
+  color:#fff;
+  font-weight: 800;
+}
+.items input::-webkit-file-upload-button{
+  border:none;
+  background-color: #262626;
+  color:#fff;
+  cursor: pointer;
+  padding:10px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px;
+  opacity: 0.7;
+  transition: 0.15s ease-in-out;
+}
+.items input::-webkit-file-upload-button:hover{
+  opacity: 1;
+}
+.content{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+p.aud{
+  text-align: center;
+  color:#fff;
+  background-color:#262626;
+  border:none;
+  outline: none;
+  font-size: 25px;
+  width:100%;
+  margin:5px;
+  padding:5px;
+  font-family:calibri;
+}
+p.path{
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: Boril;
+  padding-left: 40px;
+  font-weight: 1000;
+  width:100%;
+  text-align: center;
+  animation: colorful 2s infinite alternate-reverse;
+}
+
+@keyframes colorful {
+  0%{
+    color:red;
+  }
+  20%{
+    color:orange;
+  }
+  40%{
+    color:yellow;
+  }
+  60%{
+    color:rgb(0, 255, 0);
+  }
+  80%{
+    color:aqua;
+  }
+  100%{
+    color:rgb(255, 0, 144);
+  }
+}
+
+
+
+
+
+
+
