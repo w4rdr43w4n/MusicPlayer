@@ -40,22 +40,18 @@ progress.onchange = function () {
   song.currentTime = progress.value;
 };
 
-const base = window.location.pathname.includes("MusicPlayer")
-  ? "/MusicPlayer/"
-  : "/";
-
 let sources = [
   {
     name: "East_Duo",
-    src: `${base}songs/East_Duo_Georgian_Song.m4a`,
+    src: "/songs/East_Duo_Georgian_Song.m4a",
   },
   {
     name: "Ay_Carmella",
-    src: "../songs/Ay_Carmela_Spanish_Song.m4a",
+    src: "/songs/Ay_Carmela_Spanish_Song.m4a",
   },
   {
     name: "Hala_Madrid",
-    src: "../songs/Real_Madrid_Song.m4a",
+    src: "/songs/Real_Madrid_Song.m4a",
   },
 ];
 song.setAttribute("src", sources[0].src);
