@@ -43,7 +43,7 @@ progress.onchange = function () {
 let sources = [
   {
     name: "East_Duo",
-    src: "/songs/East_Duo_Georgian_Song.m4a",
+    src: "/MusicPlayer/songs/East_Duo_Georgian_Song.m4a",
   },
   {
     name: "Ay_Carmella",
