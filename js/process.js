@@ -39,14 +39,14 @@ setInterval(() => {
 progress.onchange = function () {
   song.currentTime = progress.value;
 };
+/* Uncomment code below for local use */
 
+/*
 let sources = [
   {
     name: "East_Duo",
     src: "../songs/East_Duo_Georgian_Song.m4a",
   },
-];
-/*
   {
     name: "Ay_Carmella",
     src: "../songs/Ay_Carmela_Spanish_Song.m4a",
@@ -54,11 +54,15 @@ let sources = [
   {
     name: "Hala_Madrid",
     src: "../songs/Real_Madrid_Song.m4a",
-  },*/
+  },
+];
+*/
 song.setAttribute("src", sources[0].src);
 sname.innerText = sources[0].name;
 let currentSong = 0;
 
+/* Uncomment code below for local use */
+/*
 forW.addEventListener("click", () => {
   currentSong++;
   if (currentSong > sources.length - 1) {
@@ -81,3 +85,4 @@ back.addEventListener("click", () => {
     song.play();
   }
 });
+*/
