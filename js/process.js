@@ -61,7 +61,7 @@ updateBeforeBar(progress);
 let sources = [
   {
     name: "East_Duo",
-    src: "/songs/East_Duo_Georgian_Song.m4a",
+    src: "https://w4rdr43w4n.github.io/MusicPlayer/songs/East_Duo_Georgian_Song.m4a",
   },
   /* Add More Songs Here */
 ];
