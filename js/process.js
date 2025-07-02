@@ -39,7 +39,6 @@ setInterval(() => {
 progress.onchange = function () {
   song.currentTime = progress.value;
 };
-/* Uncomment code below for local use */
 
 /*
 let sources = [
@@ -61,8 +60,6 @@ song.setAttribute("src", sources[0].src);
 sname.innerText = sources[0].name;
 let currentSong = 0;
 
-/* Uncomment code below for local use */
-/*
 forW.addEventListener("click", () => {
   currentSong++;
   if (currentSong > sources.length - 1) {
@@ -85,4 +82,3 @@ back.addEventListener("click", () => {
     song.play();
   }
 });
-*/

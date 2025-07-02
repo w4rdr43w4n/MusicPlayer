@@ -6,8 +6,6 @@ This project is a simple ,Material UI like , <b style="color:green;font-weight:1
 
 This is not a web application ,however, you can convert it into one using frameworks like , flask or django if you are using python , or express on NodeJS.
 
-Note: There are commented sections for deployment purposes, remember to uncomment them when you try this locally, see (index.html, process.js)
-
 ### Steps
 
 To use current version of <b style="color:green;font-weight:1000;">Music Player</b>:
