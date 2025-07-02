@@ -5,6 +5,8 @@ let time = document.querySelector(".song_time");
 let play = document.querySelector("#play");
 let songImg = document.querySelector(".song_img");
 
+const rangeWrap = document.querySelector(".range-wrap");
+
 let items = document.querySelector(".items");
 let comp = document.querySelector(".comp");
 let cont = document.querySelector(".content");
@@ -27,6 +29,7 @@ ctrlIcon.addEventListener("click", () => {
 
 setInterval(() => {
   progress.value = song.currentTime;
+  updateBeforeBar(progress);
   let sec = Math.floor(song.currentTime) % 60;
   let min = Math.floor(Math.floor(song.currentTime) / 60);
   sec = sec < 10 ? "0" + sec : sec;
@@ -34,28 +37,36 @@ setInterval(() => {
   time.innerText = `${min}:${sec}`;
   let rot = song.currentTime / song.duration;
   songImg.style.transform = `rotate(${rot * 720}deg)`;
+
+  if (progress.value == Math.round(song.duration)) {
+    play.classList = "fa fa-play";
+    rangeWrap.style.setProperty("--progress-width", `${0}%`);
+    progress.value = 0;
+    song.currentTime = 0;
+    song.pause();
+  }
 }, 500);
 
+console.log(progress.value);
 progress.onchange = function () {
   song.currentTime = progress.value;
 };
+function updateBeforeBar(el) {
+  const percent = ((el.value - el.min) / (el.max - el.min)) * 100;
+  rangeWrap.style.setProperty("--progress-width", `${percent}%`);
+}
 
-/*
+progress.addEventListener("input", () => updateBeforeBar(progress));
+updateBeforeBar(progress);
+
 let sources = [
   {
     name: "East_Duo",
     src: "../songs/East_Duo_Georgian_Song.m4a",
   },
-  {
-    name: "Ay_Carmella",
-    src: "../songs/Ay_Carmela_Spanish_Song.m4a",
-  },
-  {
-    name: "Hala_Madrid",
-    src: "../songs/Real_Madrid_Song.m4a",
-  },
+  /* Add More Songs Here */
 ];
-*/
+
 song.setAttribute("src", sources[0].src);
 sname.innerText = sources[0].name;
 let currentSong = 0;
@@ -82,3 +93,22 @@ back.addEventListener("click", () => {
     song.play();
   }
 });
+
+const enableDarkmode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkmode", "active");
+};
+const disableDarkmode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkmode", "disabled");
+};
+darkmode = localStorage.getItem("darkmode");
+
+if (darkmode === "active") {
+  document.body.classList.add("darkmode");
+}
+document.querySelector(".themeToggle").addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode");
+  darkmode === "active" ? disableDarkmode() : enableDarkmode();
+});
+enableDarkmode();
