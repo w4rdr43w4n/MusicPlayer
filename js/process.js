@@ -47,7 +47,6 @@ setInterval(() => {
   }
 }, 500);
 
-console.log(progress.value);
 progress.onchange = function () {
   song.currentTime = progress.value;
 };
@@ -62,7 +61,7 @@ updateBeforeBar(progress);
 let sources = [
   {
     name: "East_Duo",
-    src: "../songs/East_Duo_Georgian_Song.m4a",
+    src: "/songs/East_Duo_Georgian_Song.m4a",
   },
   /* Add More Songs Here */
 ];
