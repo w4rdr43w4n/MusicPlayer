@@ -16,7 +16,7 @@ let sname = document.querySelector(".Sname");
 song.onloadedmetadata = function () {
   progress.max = song.duration;
   progress.value = song.currentTime;
-  document.body.classList.add('loaded');
+  document.body.classList.add("loaded");
 };
 ctrlIcon.addEventListener("click", () => {
   if (play.classList == "fa fa-pause") {
@@ -96,8 +96,13 @@ forW.addEventListener("click", () => {
     currentSong = 0;
   }
   setTheme(prev, sources[currentSong].theme);
+  loadSongWithImage(
+    song,
+    songImg,
+    sources[currentSong].src,
+    sources[currentSong].img
+  );
   songImg.src = sources[currentSong].img || "imgs/Unknown.jpg";
-
   song.setAttribute("src", sources[currentSong].src);
   sname.innerText = sources[currentSong].name;
   if (play.classList == "fa fa-pause") {
@@ -112,6 +117,12 @@ back.addEventListener("click", () => {
     currentSong = sources.length - 1;
   }
   setTheme(prev, sources[currentSong].theme);
+  loadSongWithImage(
+    song,
+    songImg,
+    sources[currentSong].src,
+    sources[currentSong].img
+  );
   songImg.src = sources[currentSong].img || "imgs/Unknown.jpg";
 
   song.setAttribute("src", sources[currentSong].src);
@@ -146,5 +157,48 @@ function setTheme(oldT, newT) {
   }
   if (newT) {
     document.body.classList.add(newT);
+  }
+}
+
+/* Correct Loading */
+function showLoader() {
+  document.getElementById("loader").classList.add("active");
+}
+
+function hideLoader() {
+  document.getElementById("loader").classList.remove("active");
+}
+
+function loadSongWithImage(audioElement, imgElement, audioSrc, imgSrc) {
+  showLoader();
+
+  let audioLoaded = false;
+  let imgLoaded = false;
+
+  // set sources
+  audioElement.src = audioSrc;
+  imgElement.src = imgSrc;
+
+  // handle audio load
+  audioElement.oncanplaythrough = () => {
+    audioLoaded = true;
+    checkAllLoaded();
+  };
+
+  // handle image load
+  imgElement.onload = () => {
+    imgLoaded = true;
+    checkAllLoaded();
+  };
+
+  // fallback in case one fails to load
+  audioElement.onerror = imgElement.onerror = () => {
+    hideLoader();
+  };
+
+  function checkAllLoaded() {
+    if (audioLoaded && imgLoaded) {
+      hideLoader();
+    }
   }
 }

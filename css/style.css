@@ -11,6 +11,7 @@
 }
 
 :root {
+  --spinner-size: 60px;
   width: 100%;
   height: 100%;
   /* Colors Theme */
@@ -47,12 +48,8 @@ html {
 body {
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
 }
-body.loaded {
-  opacity: 1;
-}
+
 .container {
   width: 100%;
   height: 100vh;
@@ -241,15 +238,34 @@ input.progress::-moz-range-track {
   position: fixed;
   inset: 0;
   background: #121212;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.spinner {
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top: 5px solid rgb(2, 188, 148);
+  animation: spin 0.75s forwards linear infinite;
+  padding: 0;
+  margin: 0;
 }
 
-body.loaded #loader {
-  display: none;
+#loader.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(720deg);
+  }
 }
 
 @media (max-width: 768px) {
