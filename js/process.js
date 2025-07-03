@@ -37,7 +37,6 @@ setInterval(() => {
   time.innerText = `${min}:${sec}`;
   let rot = song.currentTime / song.duration;
   songImg.style.transform = `rotate(${rot * 720}deg)`;
-
   if (progress.value == Math.round(song.duration)) {
     play.classList = "fa fa-play";
     rangeWrap.style.setProperty("--progress-width", `${0}%`);
@@ -62,19 +61,42 @@ let sources = [
   {
     name: "East_Duo",
     src: "https://w4rdr43w4n.github.io/MusicPlayer/songs/East_Duo_Georgian_Song.m4a",
+    // src: "../songs/East_Duo_Georgian_Song.m4a",
+    img: "imgs/east.jpeg",
+    theme: "green-theme",
+  },
+  {
+    name: "Skaba-Akhras",
+    src: "https://w4rdr43w4n.github.io/MusicPlayer/songs/Skaba-Akhras.mp3",
+    //src: "../songs/Skaba-Akhras.mp3",
+    img: "imgs/Skaba.jpg",
+    theme: "wine-theme",
+  },
+  {
+    name: "Shami-Khayal",
+    src: "https://w4rdr43w4n.github.io/MusicPlayer/songs/Shami-Khiala.mp3",
+    //src: "../songs/Shami-Khiala.mp3",
+    img: "imgs/khayal.jpeg",
+    theme: "slate-theme",
   },
   /* Add More Songs Here */
 ];
 
 song.setAttribute("src", sources[0].src);
 sname.innerText = sources[0].name;
+setTheme(null, sources[0].theme);
+songImg.src = sources[0].img || "imgs/Unknown.jpg";
 let currentSong = 0;
 
 forW.addEventListener("click", () => {
+  const prev = sources[currentSong].theme;
   currentSong++;
   if (currentSong > sources.length - 1) {
     currentSong = 0;
   }
+  setTheme(prev, sources[currentSong].theme);
+  songImg.src = sources[currentSong].img || "imgs/Unknown.jpg";
+
   song.setAttribute("src", sources[currentSong].src);
   sname.innerText = sources[currentSong].name;
   if (play.classList == "fa fa-pause") {
@@ -82,10 +104,15 @@ forW.addEventListener("click", () => {
   }
 });
 back.addEventListener("click", () => {
+  const prev = sources[currentSong].theme;
   currentSong--;
+
   if (currentSong < 0) {
     currentSong = sources.length - 1;
   }
+  setTheme(prev, sources[currentSong].theme);
+  songImg.src = sources[currentSong].img || "imgs/Unknown.jpg";
+
   song.setAttribute("src", sources[currentSong].src);
   sname.innerText = sources[currentSong].name;
   if (play.classList == "fa fa-pause") {
@@ -111,3 +138,12 @@ document.querySelector(".themeToggle").addEventListener("click", () => {
   darkmode === "active" ? disableDarkmode() : enableDarkmode();
 });
 enableDarkmode();
+
+function setTheme(oldT, newT) {
+  if (oldT) {
+    document.body.classList.remove(oldT);
+  }
+  if (newT) {
+    document.body.classList.add(newT);
+  }
+}

@@ -1,0 +1,135 @@
+/* Green Theme */
+.green-theme {
+  --theme-toggle-bg: #4caf50;
+
+  --soft-border: #cdeacd;
+  --main-bg-color: #effaf0;
+  --disc-shadow: #2e7d32;
+  --player-bg: #ffffff;
+  --player-shadow: #b7dcb9;
+  --text-color: #1e2b1e;
+  --play-btn-bg: #dcf5dd;
+  --progress-bg: #81c784;
+  --slider-bg: rgb(56, 142, 60);
+}
+.darkmode.green-theme {
+  --theme-toggle-bg: #81c784;
+
+  --soft-border: #66bb6a;
+  --main-bg-color: #202e23;
+  --disc-shadow: #d0e8d0;
+  --player-bg: #2c4031;
+  --player-shadow: #111;
+  --play-btn-bg: #335c42;
+  --text-color: #eaf7ea;
+  --progress-bg: #4caf50;
+  --slider-bg: rgb(173, 255, 185);
+}
+
+/* Wine Theme */
+.wine-theme {
+  --theme-toggle-bg: #a63b5b;
+  --soft-border: #f4d3dc;
+  --main-bg-color: #fef6f8;
+  --disc-shadow: #84294a;
+  --player-bg: #ffffff;
+  --player-shadow: #f3b6c4;
+  --text-color: #2a1518;
+  --play-btn-bg: #fde7ec;
+  --progress-bg: #d81b60;
+  --slider-bg: rgb(142, 36, 66);
+}
+.darkmode.wine-theme {
+  --theme-toggle-bg: #f48fb1;
+
+  --soft-border: #ec407a;
+  --main-bg-color: #2a1c22;
+  --disc-shadow: #ffc1e3;
+  --player-bg: #412733;
+  --player-shadow: #111;
+  --play-btn-bg: #5c2f3f;
+  --text-color: #ffeaf0;
+  --progress-bg: #c2185b;
+  --slider-bg: rgb(255, 170, 190);
+}
+
+/* Blue Theme */
+.blue-theme {
+  --theme-toggle-bg: #1565c0;
+  --soft-border: #c8dff8;
+  --main-bg-color: #f4f9fd;
+  --disc-shadow: #0d47a1;
+  --player-bg: #ffffff;
+  --player-shadow: #b3d4f2;
+  --text-color: #1e2c38;
+  --play-btn-bg: #e0f0fd;
+  --progress-bg: #64b5f6;
+  --slider-bg: rgb(30, 136, 229);
+}
+.darkmode.blue-theme {
+  --theme-toggle-bg: #90caf9;
+  --soft-border: #64b5f6;
+  --main-bg-color: #1b2633;
+  --disc-shadow: #bbdefb;
+  --player-bg: #223344;
+  --player-shadow: #111;
+  --play-btn-bg: #2e4a64;
+  --text-color: #e3f3fd;
+  --progress-bg: #42a5f5;
+  --slider-bg: rgb(138, 204, 255);
+}
+/* Amber Theme */
+.amber-theme {
+  --theme-toggle-bg: #ff8f00;
+
+  --soft-border: #ffe0b2;
+  --main-bg-color: #fff8ed;
+  --disc-shadow: #ff6f00;
+  --player-bg: #ffffff;
+  --player-shadow: #ffe0b2;
+  --text-color: #3a2a1e;
+  --play-btn-bg: #fff3e0;
+  --progress-bg: #ffb300;
+  --slider-bg: rgb(255, 143, 0);
+}
+.darkmode.amber-theme {
+  --theme-toggle-bg: #ffca28;
+
+  --soft-border: #ffb300;
+  --main-bg-color: #2b1e0f;
+  --disc-shadow: #ffe082;
+  --player-bg: #3c2b19;
+  --player-shadow: #111;
+  --play-btn-bg: #4d341c;
+  --text-color: #fff9e4;
+  --progress-bg: #ffa000;
+  --slider-bg: rgb(255, 208, 126);
+}
+
+/* Slate Theme */
+.slate-theme {
+  --theme-toggle-bg: #546e7a;
+
+  --soft-border: #cfd8dc;
+  --main-bg-color: #f7f9fa;
+  --disc-shadow: #37474f;
+  --player-bg: #ffffff;
+  --player-shadow: #cfd8dc;
+  --text-color: #2a2d2e;
+  --play-btn-bg: #eceff1;
+  --progress-bg: #78909c;
+  --slider-bg: rgb(84, 110, 122);
+}
+.darkmode.slate-theme {
+  --theme-toggle-bg: #90a4ae;
+
+  --soft-border: #607d8b;
+  --main-bg-color: #1d2327;
+  --disc-shadow: #b0bec5;
+  --player-bg: #2a2f33;
+  --player-shadow: #111;
+  --play-btn-bg: #37474f;
+  --text-color: #e0e0e0;
+  --progress-bg: #78909c;
+  --slider-bg: rgb(180, 200, 210);
+}
