@@ -16,6 +16,7 @@ let sname = document.querySelector(".Sname");
 song.onloadedmetadata = function () {
   progress.max = song.duration;
   progress.value = song.currentTime;
+  document.body.classList.add('loaded');
 };
 ctrlIcon.addEventListener("click", () => {
   if (play.classList == "fa fa-pause") {
